@@ -1,13 +1,13 @@
 ---
 title: "Homework 1"
-author: "Kristi Gdanetz MacCready"
+author: "Mingjiao Sun"
 date: "01/08/2020"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(root.dir = "~/Documents/UMBio201/Lab1/")
+knitr::opts_knit$set(root.dir = "/Lab1/")
 ```
 
 # Interacting with R
@@ -29,7 +29,7 @@ If the R console shows a + prompt, it means that you haven’t finished entering
 ### Objects vs. variables
 You can get output from R simply by typing math in the console. Type the calulcations below and observe the output.
 ```{r}
-3 + 5
+ 3 + 5
 12 / 7
 ```
 
@@ -47,7 +47,7 @@ What are known as objects in R are known as variables in many other programming 
 When assigning a value to an object, R does not print anything. You can force R to print the value by using parentheses or by typing the object name:
 ```{r}
 height_in <- 72   #doesn't print anything
-height_in          #typing the name of the object prints it
+height_in        #typing the name of the object prints it
 ```
 
 Now that R has height_in in memory, we can do arithmetic with it. For publication purposes, we must convert this height into metric units (height in centimeters is 2.54 times the height in inches):
@@ -252,30 +252,31 @@ We’ve seen that vectors can be of types character, numeric (or double), intege
 
 Create each of the vectors in the code chunck below. In the console type class() or typeof() with each vector as an argument to check the data type of your objects. Write the result as a comment: 
 ```{r}
-num_char <- c(1, 2, 3, "a") # class = ?
-num_logical <- c(1, 2, 3, TRUE) # class = ?
-char_logical <- c("a", "b", "c", TRUE) # class = ?
-tricky <- c(1, 2, 3, "4") # class = ?
-# How do you explain the result for tricky? 
+num_char <- c(1, 2, 3, "a") # class =  "character"
+num_logical <- c(1, 2, 3, TRUE) # class = "numeric"
+char_logical <- c("a", "b", "c", TRUE) # class = "character"
+tricky <- c(1, 2, 3, "4") # class = "character" 
+# How do you explain the result for tricky? Because of the order of hierarchy.If only there is a character assigned in a variable, no matter how many numerics in the variable, the variable will be converted to class "character" automatically.
 ```
+
 
 How many values in combined_logical are "TRUE" (as a character) in the following example:
 ```{r}
 num_logical <- c(1, 2, 3, TRUE)
 char_logical <- c("a", "b", "c", TRUE)
 combined_logical <- c(num_logical, char_logical)
-# type answer here
+# type answer here 1
 ```
 
 # Question 2
 You’ve probably noticed that objects of different types get converted into a single, shared type within a vector. In R, we call converting objects from one class into another class coercion. These conversions happen according to a hierarchy, whereby some types get preferentially coerced into other types. What is the order of the hierarchy? 
 
-<type answer here>
+<Three, so far. Numeric, char and logical.>
 
 # Question 3
 ```{r}
 # Build a vector of the study semesters (Winter2015  through Winter2020): 
-
+semesters <- c(Winter2015, Winter2016, Winter2017, Winter2018, Winter2019, Winter2020)
 # Build a vector of the supplements consumed (see powerpoint slides): 
 
 # What type are each of these? 
